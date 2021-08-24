@@ -9,7 +9,6 @@ import SwiftUI
 import Kingfisher
 
 struct PokemonDetailView: View {
-    
     let pokemon: PokemonList
 
     @State var tab = true
@@ -45,7 +44,8 @@ struct PokemonDetailView: View {
                     .font(.title)
                     .bold()
                     .padding(.bottom, 20)
-           
+                    .foregroundColor(.black)
+
                 
                 Text(pokemon.type.capitalized)
                     .font(.subheadline)
@@ -63,6 +63,8 @@ struct PokemonDetailView: View {
                 Text(String(pokemon.description).removeN())
                     .font(.caption)
                     .padding()
+                    .foregroundColor(.black)
+
                 
                 
                 

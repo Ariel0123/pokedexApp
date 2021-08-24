@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StatsView: View {
-    
+
     @Binding var attack: Float
     @Binding var defense: Float
     @Binding var height: Float
@@ -21,6 +21,7 @@ struct StatsView: View {
         VStack{
             HStack{
                 Text("Attack")
+                    .foregroundColor(.black)
                     .font(.caption)
                     .frame(width: 50, alignment: .leading)
                 Bar(value: $attack, colorBar: $colorBar)
@@ -28,6 +29,7 @@ struct StatsView: View {
             }
             HStack{
                 Text("Defense")
+                    .foregroundColor(.black)
                     .font(.caption)
                     .frame(width: 50, alignment: .leading)
 
@@ -36,6 +38,7 @@ struct StatsView: View {
             }
             HStack{
                 Text("Height")
+                    .foregroundColor(.black)
                     .font(.caption)
                     .frame(width: 50, alignment: .leading)
 
@@ -44,6 +47,7 @@ struct StatsView: View {
             }
             HStack{
                 Text("Weight")
+                    .foregroundColor(.black)
                     .font(.caption)
                     .frame(width: 50, alignment: .leading)
 

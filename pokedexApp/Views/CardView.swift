@@ -9,6 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct CardView: View {
+    @Environment(\.colorScheme) var colorScheme
     
     let pokemon: PokemonList
     
@@ -59,7 +60,7 @@ struct CardView: View {
             }
             .background(self.setMainColor)
             .cornerRadius(20)
-            .shadow(color: self.setMainColor, radius: 5, x: 0.0, y: 0.0)
+            .shadow(color: self.setMainColor, radius: colorScheme == .dark ? 0 : 5, x: 0.0, y: 0.0)
             .onAppear{
                 DispatchQueue.main.async {
                 self.setMainColor = Color.backgroundColorPokemon(forType: pokemon.type)
