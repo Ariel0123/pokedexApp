@@ -9,7 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct PokemonDetailView: View {
-    let pokemon: PokemonList
+    @Binding var pokemon: PokemonList
 
     @State var tab = true
     
@@ -25,9 +25,7 @@ struct PokemonDetailView: View {
             VStack{
                 
             VStack{
-                KFImage(URL(string: pokemon.imageUrl))
-                    .resizable()
-                    .scaledToFit()
+                ImageCache(pokemon.imageUrl)
                     .frame(width: 250, height: 250, alignment: .center)
                     .background(
                         Circle()
@@ -119,15 +117,15 @@ struct PokemonDetailView: View {
                     
             
                     if self.tab{
-                        StatsView(attack: .constant(Float(pokemon.attack)),
-                                  defense: .constant(Float(pokemon.defense)),
-                                  height: .constant(Float(pokemon.height)),
-                                weight: .constant(Float(pokemon.weight)),
+                        StatsView(attack: $pokemon.attack,
+                                  defense: $pokemon.defense,
+                                  height: $pokemon.height,
+                                weight: $pokemon.weight,
                                 colorBar: $setMainColor)
                                 .padding()
                                 .padding(.bottom,40)
                     }else{
-                        EvolutionsView(evos: .constant(pokemon.evolutionChain ?? [Evolution(id: "", name: "")]), colorBar: $setMainColor)
+                        EvolutionsView(evos: $pokemon.evolutionChain, colorBar: $setMainColor)
                             .padding()
                             .padding(.bottom,18)
 
@@ -162,6 +160,6 @@ struct PokemonDetailView: View {
 
 struct PokemonDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PokemonDetailView(pokemon: PokemonList(id: 0, name: "", imageUrl: "", type: "", attack: 0, defense: 0, weight: 0, height: 0, description: "", evolutionChain: [Evolution(id: "", name: "")]))
+        PokemonDetailView(pokemon: .constant(PokemonList(id: 0, name: "", imageUrl: "", type: "", attack: 0, defense: 0, weight: 0, height: 0, description: "", evolutionChain: [Evolution(id: "", name: "")])))
     }
 }

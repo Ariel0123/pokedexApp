@@ -11,7 +11,7 @@ import Kingfisher
 struct CardView: View {
     @Environment(\.colorScheme) var colorScheme
     
-    let pokemon: PokemonList
+    @Binding var pokemon: PokemonList
     
     @State var setMainColor = Color.clear
 
@@ -41,9 +41,10 @@ struct CardView: View {
                             .frame(width: 100, height: 24)
                             
                         
-                        KFImage(URL(string: pokemon.imageUrl))
-                            .resizable()
-                            .scaledToFit()
+                        //KFImage(URL(string: pokemon.imageUrl))
+                        ImageCache(pokemon.imageUrl)
+                            //.resizable()
+                           // .scaledToFit()
                             .frame(width: 68, height: 68)
                             .padding([.bottom, .trailing], 4)
                             .background(
@@ -78,6 +79,10 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(pokemon: PokemonList(id: 0, name: "", imageUrl: "", type: "", attack: 0, defense: 0, weight: 0, height: 0, description: "", evolutionChain: [Evolution(id: "", name: "")]))
+        CardView(pokemon: .constant(PokemonList(id: 0, name: "", imageUrl: "", type: "", attack: 0, defense: 0, weight: 0, height: 0, description: "", evolutionChain: [Evolution(id: "", name: "")])))
     }
 }
+
+
+
+

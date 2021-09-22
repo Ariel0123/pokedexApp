@@ -9,10 +9,10 @@ import SwiftUI
 
 struct StatsView: View {
 
-    @Binding var attack: Float
-    @Binding var defense: Float
-    @Binding var height: Float
-    @Binding var weight: Float
+    @Binding var attack: Int
+    @Binding var defense: Int
+    @Binding var height: Int
+    @Binding var weight: Int
     
     @Binding var colorBar: Color
     
@@ -60,6 +60,6 @@ struct StatsView: View {
 
 struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
-        StatsView(attack: .constant(0.0), defense: .constant(0.0), height: .constant(0.0), weight: .constant(0.0), colorBar: .constant(.clear))
+        StatsView(attack: .constant(0), defense: .constant(0), height: .constant(0), weight: .constant(0), colorBar: .constant(.clear))
     }
 }

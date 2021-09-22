@@ -20,10 +20,10 @@ struct PokedexView: View {
         NavigationView{
             ScrollView(showsIndicators: false){
                 LazyVGrid(columns:columns, spacing:15){
-                    ForEach(pokemons.pokemonArr){pk in
+                    ForEach($pokemons.pokemonArr){$pk in
                         NavigationLink(
-                            destination: PokemonDetailView(pokemon: pk)){
-                            CardView(pokemon: pk)
+                            destination: PokemonDetailView(pokemon: $pk)){
+                            CardView(pokemon: $pk)
 
                         }
                        
@@ -32,6 +32,8 @@ struct PokedexView: View {
             }
             .navigationTitle("Pokedex")
         }.accentColor(.white)
+            .navigationViewStyle(StackNavigationViewStyle())
+
         .alert(item: $pokemons.errorMsg){ error in
             Alert(title: Text("Error"), message: Text(error.message.messageError))
         }
@@ -45,5 +47,6 @@ struct PokedexView: View {
 struct PokedexView_Previews: PreviewProvider {
     static var previews: some View {
         PokedexView()
+            .environmentObject(PokemonService())
     }
 }

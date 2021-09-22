@@ -8,21 +8,21 @@
 import Foundation
 
 struct PokemonList: Codable, Identifiable{
-    let id: Int
-    let name: String
-    let imageUrl: String
-    let type: String
-    let attack: Int
-    let defense: Int
-    let weight: Int
-    let height: Int
-    let description: String
-    let evolutionChain: [Evolution]?
+    var id: Int
+    var name: String
+    var imageUrl: String
+    var type: String
+    var attack: Int
+    var defense: Int
+    var weight: Int
+    var height: Int
+    var description: String
+    var evolutionChain: [Evolution]!
 }
 
 struct Evolution: Codable, Identifiable {
   
-    let id: String
-    let name: String
+    var id: String
+    var name: String
 }
 

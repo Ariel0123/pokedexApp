@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Bar: View {
     
-    @Binding var value: Float
+    @Binding var value: Int
     @Binding var colorBar: Color
     
     var body: some View {
@@ -19,7 +19,7 @@ struct Bar: View {
                     .opacity(0.3)
                     .foregroundColor(Color(UIColor.systemTeal))
                 
-                Rectangle().frame(width: min(geometry.size.width,  geometry.size.width * CGFloat(value/100)), height: geometry.size.height)
+                Rectangle().frame(width: min(geometry.size.width,  geometry.size.width * CGFloat(Float(value)/100)), height: geometry.size.height)
                     .foregroundColor(colorBar)
             }.cornerRadius(45.0)
               }
@@ -28,6 +28,6 @@ struct Bar: View {
 
 struct Bar_Previews: PreviewProvider {
     static var previews: some View {
-        Bar(value: .constant(Float(0.0)), colorBar: .constant(.black))
+        Bar(value: .constant(0), colorBar: .constant(.black))
     }
 }

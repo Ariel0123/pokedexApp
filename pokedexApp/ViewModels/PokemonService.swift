@@ -16,6 +16,8 @@ class PokemonService: ObservableObject{
     let POKEMON_URL = "https://pokedex-bb36f.firebaseio.com/pokemon.json"
     
     
+    
+    
     init(){
         do{
             try self.getPokedex{result in

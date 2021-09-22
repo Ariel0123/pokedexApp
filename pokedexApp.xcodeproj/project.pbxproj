@@ -22,6 +22,7 @@
 		5B81B2E826C1147B0023A3FF /* EvolutionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81B2E726C1147B0023A3FF /* EvolutionsView.swift */; };
 		5B81B2EA26C116170023A3FF /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81B2E926C116170023A3FF /* Bar.swift */; };
 		5B81B2ED26C129F30023A3FF /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81B2EC26C129F30023A3FF /* ErrorHandler.swift */; };
+		5BEC802826FA893900AE60D2 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEC802726FA893900AE60D2 /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		5B81B2E726C1147B0023A3FF /* EvolutionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionsView.swift; sourceTree = "<group>"; };
 		5B81B2E926C116170023A3FF /* Bar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		5B81B2EC26C129F30023A3FF /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		5BEC802726FA893900AE60D2 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				5B81B2E926C116170023A3FF /* Bar.swift */,
 				5B5E4E7726C0F3ED002E78DC /* Helper.swift */,
 				5B5E4E7926C0FCE7002E78DC /* RoundedCorner.swift */,
+				5BEC802726FA893900AE60D2 /* ImageCache.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B81B2EA26C116170023A3FF /* Bar.swift in Sources */,
+				5BEC802826FA893900AE60D2 /* ImageCache.swift in Sources */,
 				5B81B2E826C1147B0023A3FF /* EvolutionsView.swift in Sources */,
 				5B5E4E7526C0EEF7002E78DC /* PokemonDetailView.swift in Sources */,
 				5B5E4E7326C0E9E1002E78DC /* PokedexView.swift in Sources */,

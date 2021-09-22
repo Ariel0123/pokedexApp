@@ -9,10 +9,13 @@ import SwiftUI
 
 @main
 struct pokedexAppApp: App {
+    
+    @StateObject private var pokemonService = PokemonService()
+    
     var body: some Scene {
         WindowGroup {
             PokedexView()
-                .environmentObject(PokemonService())
+                .environmentObject(pokemonService)
         }
     }
 }
